@@ -78,3 +78,13 @@ python -m http.server 8000
 - Atalhos de período: 1M, 3M, YTD, 1A, 5A e Tudo.
 - Tooltip no gráfico com data, fundo, valor no gráfico e cotação original.
 - Cartões e tabelas com melhor leitura em ecrãs pequenos.
+
+
+## Substituição da secção "Dados filtrados"
+
+A secção final passou a chamar-se **Análise do período selecionado** e inclui:
+
+- Ranking do período por fundo.
+- Retornos por horizonte: 1M, 3M, YTD, 1A, 3A, 5A e Total.
+- Alertas de qualidade dos dados.
+- Dados brutos escondidos num bloco expansível para debug/exportação.

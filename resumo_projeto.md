@@ -45,3 +45,14 @@ Foi criada uma versão mais polida do dashboard com:
 - Atalhos de período: 1M, 3M, YTD, 1A, 5A e Tudo.
 - Gráfico mais legível e tooltip mantido.
 - Tabelas e cartões com melhor responsividade.
+
+
+## Atualização — substituição de Dados filtrados
+
+A antiga secção de dados brutos foi substituída por **Análise do período selecionado**:
+
+- Cards de insights: melhor fundo, pior fundo, média dos selecionados e maior drawdown.
+- Aba de ranking com métricas detalhadas por fundo no período escolhido.
+- Aba de retornos por horizonte: 1M, 3M, YTD, 1A, 3A, 5A e Total.
+- Aba de alertas: fundos desatualizados, cotações a zero e variações diárias superiores a 10%.
+- Dados brutos continuam disponíveis, mas escondidos num accordion.

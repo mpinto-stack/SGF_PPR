@@ -87,16 +87,48 @@
       </div>
     </section>
 
-    <section class="panel">
-      <h2>Dados filtrados</h2>
-      <div class="controls tableControls">
-        <div><label>Pesquisa</label><input id="search" placeholder="ex.: ETF, Stoik, Moneyflix"></div>
-        <div><label>Linhas/página</label><select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>250</option></select></div>
-        <div><label>Página</label><input id="page" type="number" min="1" value="1"></div>
-        <div><label>&nbsp;</label><button id="exportBtn" class="primaryBtn">Exportar CSV</button></div>
+    <section class="panel analysisPanel">
+      <div class="sectionHead">
+        <div>
+          <p class="eyebrow mini">Análise automática</p>
+          <h2>Análise do período selecionado</h2>
+          <p class="small">Resumo por fundo, retornos por horizonte e alertas de qualidade dos dados. Usa os fundos e datas selecionados acima.</p>
+        </div>
+        <div class="analysisActions">
+          <button id="selectAllBtn" type="button">Selecionar todos</button>
+          <button id="exportBtn" class="primaryBtn" type="button">Exportar CSV</button>
+        </div>
       </div>
-      <p class="small" id="tableInfo"></p>
-      <div class="tableWrap"><table id="dataTable"></table></div>
+
+      <div class="insightGrid" id="insightCards"></div>
+
+      <div class="analysisTabs" role="tablist" aria-label="Análises disponíveis">
+        <button type="button" class="active" data-tab="ranking">Ranking do período</button>
+        <button type="button" data-tab="horizons">Retornos por horizonte</button>
+        <button type="button" data-tab="alerts">Alertas</button>
+      </div>
+
+      <div id="tab-ranking" class="tabPane active">
+        <div class="tableWrap analysisTable"><table id="periodRankingTable"></table></div>
+      </div>
+      <div id="tab-horizons" class="tabPane">
+        <div class="tableWrap analysisTable"><table id="horizonReturnsTable"></table></div>
+      </div>
+      <div id="tab-alerts" class="tabPane">
+        <div id="alertsBox" class="alertsBox"></div>
+      </div>
+
+      <details class="rawDetails">
+        <summary>Mostrar dados brutos filtrados / debug</summary>
+        <div class="controls tableControls rawControls">
+          <div><label>Pesquisa</label><input id="search" placeholder="ex.: ETF, Stoik, Moneyflix"></div>
+          <div><label>Linhas/página</label><select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>250</option></select></div>
+          <div><label>Página</label><input id="page" type="number" min="1" value="1"></div>
+          <div><label>&nbsp;</label><button id="rawTopBtn" type="button">Voltar ao topo</button></div>
+        </div>
+        <p class="small" id="tableInfo"></p>
+        <div class="tableWrap"><table id="dataTable"></table></div>
+      </details>
     </section>
   </main>
 
