@@ -65,3 +65,19 @@ Após validação visual, foi corrigido:
 - A tabela **Tabela dinâmica / resumo** mostrava travessões nas métricas porque o objeto de resumo tinha nomes internos diferentes dos nomes esperados pela tabela.
 - Os valores da calculadora ficavam cortados com reticências em painéis estreitos.
 - A grelha da calculadora e a proporção da coluna direita foram ajustadas para melhor leitura em PC e telemóvel.
+
+
+## Atualização v5 — explicação curta de métricas
+
+Foi adicionado um bloco expansível/visível chamado **Como ler as métricas** dentro da secção **Análise do período selecionado**.
+
+Inclui explicações simples para:
+
+- Retorno.
+- Retorno anualizado.
+- Volatilidade anual.
+- Máximo drawdown.
+- Melhor / pior dia.
+- Base 100.
+
+Também foi adicionada uma nota para clarificar que os cálculos são baseados apenas nas cotações históricas e não incluem impostos, comissões, inflação, benefícios fiscais ou custos de resgate.

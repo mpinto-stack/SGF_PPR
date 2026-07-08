@@ -27,3 +27,9 @@ h1{margin:0 0 6px;font-size:clamp(30px,4.5vw,52px);letter-spacing:-.04em}.eyebro
 .result .card span{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(22px,2.7vw,30px);line-height:1.08;word-break:break-word}.result .card{min-width:0}.calcGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.row2{grid-template-columns:minmax(0,1.35fr) minmax(340px,.65fr)}
 @media(max-width:1100px){.row2{grid-template-columns:1fr}.calcGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.calcGrid{grid-template-columns:1fr}.result .card span{font-size:24px}}
+
+
+/* v5 metric explanations */
+.metricHelp{margin:12px 0 14px;border:1px solid #dbeafe;background:linear-gradient(180deg,#f8fbff,#ffffff);border-radius:18px;padding:12px}.metricHelp summary{cursor:pointer;font-weight:900;color:#075985;list-style:none}.metricHelp summary::-webkit-details-marker{display:none}.metricHelp summary::before{content:'?';display:inline-grid;place-items:center;width:22px;height:22px;margin-right:8px;border-radius:999px;background:#e0f2fe;color:#075985;font-weight:900}.metricHelpGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.metricHelpGrid div{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:11px;box-shadow:0 4px 14px rgba(15,23,42,.04)}.metricHelpGrid b{display:block;margin-bottom:5px;color:#0f172a}.metricHelpGrid span{display:block;color:#475569;font-size:13px;line-height:1.35}.metricNote{margin:10px 2px 0}
+@media(max-width:1100px){.metricHelpGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.metricHelp{padding:11px}.metricHelpGrid{grid-template-columns:1fr}.metricHelpGrid span{font-size:12.5px}}

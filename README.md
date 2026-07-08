@@ -94,3 +94,10 @@ A secção final passou a chamar-se **Análise do período selecionado** e inclu
 
 - Corrigida a tabela dinâmica/resumo para mostrar datas, cotações, retorno, anualizado, volatilidade e drawdown.
 - Ajustado o visual da calculadora para evitar valores cortados com reticências.
+
+
+## Correção v5
+
+- Adicionado bloco **Como ler as métricas** na análise do período selecionado.
+- Incluídas explicações curtas para retorno, retorno anualizado, volatilidade anual, máximo drawdown, melhor/pior dia e base 100.
+- Adicionada nota de que as métricas são brutas e não incluem impostos, comissões, inflação, benefícios fiscais ou custos de resgate.

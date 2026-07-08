@@ -102,6 +102,19 @@
 
       <div class="insightGrid" id="insightCards"></div>
 
+      <details class="metricHelp" open>
+        <summary>Como ler as métricas</summary>
+        <div class="metricHelpGrid">
+          <div><b>Retorno</b><span>Variação percentual da cotação entre a primeira e a última data do período selecionado.</span></div>
+          <div><b>Retorno anualizado</b><span>Retorno convertido para uma taxa anual equivalente, útil para comparar períodos de duração diferente.</span></div>
+          <div><b>Volatilidade anual</b><span>Estimativa da oscilação anual das variações diárias. Quanto maior, mais instável foi o percurso.</span></div>
+          <div><b>Máx. drawdown</b><span>Maior queda desde um máximo anterior até ao mínimo seguinte dentro do período analisado.</span></div>
+          <div><b>Melhor / pior dia</b><span>Maior subida e maior queda diária observadas no período, com a respetiva data.</span></div>
+          <div><b>Base 100</b><span>Normaliza todos os fundos para começarem em 100, facilitando a comparação visual.</span></div>
+        </div>
+        <p class="small metricNote">Nota: estas métricas são calculadas apenas com base nas cotações históricas. Não incluem impostos, comissões, inflação, benefícios fiscais ou custos de resgate.</p>
+      </details>
+
       <div class="analysisTabs" role="tablist" aria-label="Análises disponíveis">
         <button type="button" class="active" data-tab="ranking">Ranking do período</button>
         <button type="button" data-tab="horizons">Retornos por horizonte</button>
