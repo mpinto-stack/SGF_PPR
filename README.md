@@ -1,0 +1,68 @@
+# Dashboard SGF/PPR automático
+
+Dashboard estático para analisar cotações históricas dos fundos SGF/PPR.
+
+## O que faz
+
+- Descarrega diariamente o ficheiro Excel da Golden SGF:
+  `https://goldensgf.pt/wp-content/uploads/2024/08/HISTORICO-DE-COTACOES.xlsx`
+- Converte o Excel em `data/cotacoes.json`.
+- Publica automaticamente o site em GitHub Pages usando GitHub Actions.
+- Inclui gráficos, filtros, tabela dinâmica, exportação CSV e calculadora de investimento.
+
+## Estrutura
+
+```text
+.
+├── index.html
+├── assets/
+│   ├── app.js
+│   └── styles.css
+├── data/
+│   └── cotacoes.json
+├── scripts/
+│   └── update_data.py
+├── requirements.txt
+└── .github/
+    └── workflows/
+        └── update-dashboard.yml
+```
+
+## Como instalar no GitHub
+
+1. Cria um repositório novo no GitHub.
+2. Faz upload de todos os ficheiros deste pacote para o repositório.
+3. Vai a **Settings → Pages**.
+4. Em **Build and deployment**, escolhe **Source: GitHub Actions**.
+5. Vai a **Actions → Atualizar dashboard SGF/PPR**.
+6. Clica em **Run workflow** para forçar a primeira publicação.
+7. Depois disso, o workflow corre todos os dias às 08:30 UTC.
+
+## Testar localmente
+
+Como o dashboard lê `data/cotacoes.json` via `fetch`, pode não funcionar se abrires `index.html` diretamente com `file://`.
+Usa um servidor local:
+
+```bash
+python -m http.server 8000
+```
+
+Depois abre:
+
+```text
+http://localhost:8000
+```
+
+## Atualização manual local
+
+```bash
+pip install -r requirements.txt
+python scripts/update_data.py
+python -m http.server 8000
+```
+
+## Notas
+
+- O horário de `schedule` no GitHub Actions é em UTC.
+- O ficheiro `data/historico_cotacoes.xlsx` é descarregado pelo script, mas não precisa de ser versionado.
+- Se a Golden SGF alterar a estrutura do Excel, o script tem uma rotina defensiva para tentar normalizar o ficheiro.
