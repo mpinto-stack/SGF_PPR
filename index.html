@@ -7,26 +7,30 @@
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Dashboard interativo SGF/PPR</h1>
-    <div class="sub" id="metaLine">A carregar dados...</div>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Golden SGF · PPR · Fundos</p>
+      <h1>Dashboard SGF/PPR</h1>
+      <div class="sub" id="metaLine">A carregar dados...</div>
+    </div>
+    <div id="updateStatus" class="statusCard status-loading">
+      <span class="statusDot"></span>
+      <div>
+        <b>A carregar</b>
+        <small>A verificar atualização dos dados...</small>
+      </div>
+    </div>
   </header>
 
   <main class="grid">
-    <section class="panel">
+    <section class="panel controlsPanel">
       <div class="controls">
-        <div>
+        <div class="fundPicker">
           <label>Fundos para analisar/comparar</label>
           <select id="fundSelect" multiple></select>
         </div>
-        <div>
-          <label>Data início</label>
-          <input id="startDate" type="date">
-        </div>
-        <div>
-          <label>Data fim</label>
-          <input id="endDate" type="date">
-        </div>
+        <div><label>Data início</label><input id="startDate" type="date"></div>
+        <div><label>Data fim</label><input id="endDate" type="date"></div>
         <div>
           <label>Tipo de gráfico</label>
           <select id="metric">
@@ -37,12 +41,27 @@
           </select>
         </div>
       </div>
-      <p class="small">Passa o rato por cima do gráfico para ver a data, fundo e valor. Usa Ctrl/Cmd para selecionar vários fundos.</p>
+      <div class="quickRanges" aria-label="Atalhos de período">
+        <button type="button" data-range="1M">1M</button>
+        <button type="button" data-range="3M">3M</button>
+        <button type="button" data-range="YTD">YTD</button>
+        <button type="button" data-range="1Y">1A</button>
+        <button type="button" data-range="5Y">5A</button>
+        <button type="button" data-range="ALL" class="active">Tudo</button>
+      </div>
+      <p class="small helper">Dica: no PC usa Ctrl/Cmd para selecionar vários fundos. No telemóvel, começa por pesquisar na tabela ou escolhe um fundo de cada vez.</p>
     </section>
 
     <section class="cards" id="cards"></section>
 
-    <section class="panel">
+    <section class="panel chartPanel">
+      <div class="chartHead">
+        <div>
+          <h2>Evolução</h2>
+          <p class="small">Passa o rato ou toca no gráfico para ver data, fundo e valor.</p>
+        </div>
+        <div class="legendNote">Tooltip ativo</div>
+      </div>
       <div class="chartWrap">
         <canvas id="chart"></canvas>
         <div id="tooltip" class="tooltip"></div>
@@ -62,7 +81,7 @@
           <div><label>Data compra</label><input id="calcStart" type="date"></div>
           <div><label>Data venda/consulta</label><input id="calcEnd" type="date"></div>
         </div>
-        <button id="calcBtn" style="margin-top:12px">Calcular</button>
+        <button id="calcBtn" class="primaryBtn" style="margin-top:12px">Calcular</button>
         <div class="result" id="calcResult"></div>
         <p class="small">Se não existir cotação nessa data, usa a primeira cotação ≥ data de compra e a última cotação ≤ data final.</p>
       </div>
@@ -74,7 +93,7 @@
         <div><label>Pesquisa</label><input id="search" placeholder="ex.: ETF, Stoik, Moneyflix"></div>
         <div><label>Linhas/página</label><select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>250</option></select></div>
         <div><label>Página</label><input id="page" type="number" min="1" value="1"></div>
-        <div><label>&nbsp;</label><button id="exportBtn">Exportar CSV</button></div>
+        <div><label>&nbsp;</label><button id="exportBtn" class="primaryBtn">Exportar CSV</button></div>
       </div>
       <p class="small" id="tableInfo"></p>
       <div class="tableWrap"><table id="dataTable"></table></div>

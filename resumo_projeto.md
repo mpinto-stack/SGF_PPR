@@ -30,3 +30,18 @@ Preparar um pacote completo para publicar o dashboard SGF/PPR no GitHub Pages co
 3. Ativar GitHub Pages com Source = GitHub Actions.
 4. Correr manualmente o workflow uma primeira vez.
 5. Abrir o URL do GitHub Pages.
+
+
+## Atualização visual posterior
+
+Foi criada uma versão mais polida do dashboard com:
+
+- Layout visual melhorado para desktop e telemóvel.
+- Header mais claro com cartão de estado da atualização.
+- Semáforo de atualização baseado na data da última cotação:
+  - verde até 3 dias;
+  - amarelo de 4 a 7 dias;
+  - vermelho acima de 7 dias ou sem dados.
+- Atalhos de período: 1M, 3M, YTD, 1A, 5A e Tudo.
+- Gráfico mais legível e tooltip mantido.
+- Tabelas e cartões com melhor responsividade.

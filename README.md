@@ -66,3 +66,15 @@ python -m http.server 8000
 - O horário de `schedule` no GitHub Actions é em UTC.
 - O ficheiro `data/historico_cotacoes.xlsx` é descarregado pelo script, mas não precisa de ser versionado.
 - Se a Golden SGF alterar a estrutura do Excel, o script tem uma rotina defensiva para tentar normalizar o ficheiro.
+
+
+## Melhorias visuais incluídas
+
+- Layout mais limpo e responsivo para PC e telemóvel.
+- Cartão de estado da atualização com semáforo:
+  - Verde: última cotação até 3 dias.
+  - Amarelo: última cotação entre 4 e 7 dias.
+  - Vermelho: última cotação com mais de 7 dias ou sem dados.
+- Atalhos de período: 1M, 3M, YTD, 1A, 5A e Tudo.
+- Tooltip no gráfico com data, fundo, valor no gráfico e cotação original.
+- Cartões e tabelas com melhor leitura em ecrãs pequenos.
