@@ -88,3 +88,9 @@ A secção final passou a chamar-se **Análise do período selecionado** e inclu
 - Retornos por horizonte: 1M, 3M, YTD, 1A, 3A, 5A e Total.
 - Alertas de qualidade dos dados.
 - Dados brutos escondidos num bloco expansível para debug/exportação.
+
+
+## Correção v4
+
+- Corrigida a tabela dinâmica/resumo para mostrar datas, cotações, retorno, anualizado, volatilidade e drawdown.
+- Ajustado o visual da calculadora para evitar valores cortados com reticências.

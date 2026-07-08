@@ -56,3 +56,12 @@ A antiga secção de dados brutos foi substituída por **Análise do período se
 - Aba de retornos por horizonte: 1M, 3M, YTD, 1A, 3A, 5A e Total.
 - Aba de alertas: fundos desatualizados, cotações a zero e variações diárias superiores a 10%.
 - Dados brutos continuam disponíveis, mas escondidos num accordion.
+
+
+## Correção v4 — resumo e calculadora
+
+Após validação visual, foi corrigido:
+
+- A tabela **Tabela dinâmica / resumo** mostrava travessões nas métricas porque o objeto de resumo tinha nomes internos diferentes dos nomes esperados pela tabela.
+- Os valores da calculadora ficavam cortados com reticências em painéis estreitos.
+- A grelha da calculadora e a proporção da coluna direita foram ajustadas para melhor leitura em PC e telemóvel.

@@ -24,7 +24,21 @@ async function loadData(){
   if(!DATA.max_date) DATA.max_date = ROWS.reduce((a,r)=>!a||r[1]>a?r[1]:a, null);
   buildSummary();
 }
-function buildSummary(){ SUMMARY = selectedOrAllStats(FUNDS.map((_,i)=>i), DATA.min_date, DATA.max_date); }
+function buildSummary(){
+  SUMMARY = selectedOrAllStats(FUNDS.map((_,i)=>i), DATA.min_date, DATA.max_date).map(s => ({
+    f:s.f,
+    nome:s.nome,
+    inicio:s.start,
+    fim:s.end,
+    cotacaoInicial:s.startQuote,
+    cotacaoFinal:s.endQuote,
+    retornoPct:s.ret,
+    anualizadoPct:s.ann,
+    volPct:s.vol,
+    maxDrawdownPct:s.mdd,
+    n:s.n
+  }));
+}
 
 function selectedFunds(){const a=[...el('fundSelect').selectedOptions].map(o=>Number(o.value));return a.length?a:[0]}
 function selectedRowsNoSearch(){const fs=new Set(selectedFunds()), sd=el('startDate').value, ed=el('endDate').value;return ROWS.filter(r=>fs.has(r[0])&&r[1]>=sd&&r[1]<=ed)}
